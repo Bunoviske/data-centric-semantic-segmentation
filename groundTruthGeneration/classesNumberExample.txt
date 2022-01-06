@@ -1,0 +1,5 @@
+0: void
+1: car
+2: airplane
+3: dog
+4: cat

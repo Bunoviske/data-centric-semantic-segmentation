@@ -22,7 +22,7 @@ Install opencv and latest g++ and c++
 Two arguments:  
 
 1- path to images folder  
-2- path to classesNumber.txt 
+2- path to classesNumber.txt (this should be your label ids file. See the example file and follow the same format)
 
 Example  
 
