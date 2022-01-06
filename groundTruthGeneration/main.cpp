@@ -1,8 +1,5 @@
 #include "watershed.hpp"
 
-// FASTAI
-// width 466
-// height 350
 
 // #define WIDTH 250
 // #define HEIGHT 250
@@ -39,7 +36,7 @@ int main(int argc, char **argv)
     }
     else
     {
-        cout << "Insira o path para sua pasta de imagens e o path para o arquivo txt de labels" << endl;
+        cout << "Insert your images folder path and the label ids file path" << endl;
         return -1;
     }
 
@@ -90,17 +87,10 @@ void executeMoveFile(string imageName, string destinationFolder)
 }
 void getImagesAndRun(string folder)
 {
-
-    /*********
-     *
-     * Aquisicao das imagens de treino de uma pasta
-     *
-     *********/
-
     vector<String> filepaths;
 
     glob(folder, filepaths);
-    cout << "Qtd de imagens: " << filepaths.size() << endl;
+    cout << "Total images: " << filepaths.size() << endl;
 
     for (size_t i = 0; i < filepaths.size(); ++i)
     {
@@ -135,27 +125,27 @@ int runManualSemanticSegmentation(Mat image, string filepath)
     imshow("plate", img0);
     setMouseCallback("plate", chooseWshedMarkers, NULL);
 
-    //////////////////////// etapa 1 : segmentar usando watershed
+    //////////////////////// step one : watershed segmentation
     while (1)
     {
         char c = waitKey();
-        //se desejar fechar video/streaming, apertar esc
+        //if you want to exit, press esc
         if ((char)c == 27) //esc
         {
             return -1;
         }
-        if (c == 'c') // 'classificacao': classifica os alimentos segmentados
+        if (c == 'c') // 'classification': classify segmented objects
         {
             img = image.clone();
             markers = wshed.runWatershed(&img, &markerMask, &markers, &wshedMat, imgGray);
             break;
         }
-        if (c == 'w') // 'watershed' : roda algoritmo de segmentacao
+        if (c == 'w') // 'watershed' : run watershed algorithm
         {
             img = image.clone();
             markers = wshed.runWatershed(&img, &markerMask, &markers, &wshedMat, imgGray);
         }
-        if (c == 'r') // 'reload': limpa imagem de segmentada
+        if (c == 'r') // 'reload': clear all segmentations
         {
             img0 = image.clone();
             img = image.clone();
@@ -164,23 +154,23 @@ int runManualSemanticSegmentation(Mat image, string filepath)
         }
     }
     setMouseCallback("wshed", chooseFoods, NULL);
-    cout << "********************** Classifique cada alimento (OLHAR DRIVE) **********************" << endl;
-    //////////////////////// etapa 2 : classificar cada alimento
+    cout << "********************** Classify each object (look your label ids file) **********************" << endl;
+    //////////////////////// step two : classify the segmented objects
     while (1)
     {
         char c = waitKey();
-        //se desejar fechar video/streaming, apertar esc
+        //if you want to exit, press esc
         if ((char)c == 27) //esc
         {
             return -1;
         }
-        if (c == 'n') // 'next': termina annotation dessa imagem e vai para a proxima
+        if (c == 'n') // 'next': finish the annotation from this image and go to the next one
         {
             break;
         }
     }
 
-    //salva imagem GT e move imagem original para outra pasta
+    //save GT image inside "gt" folder and move the original image to "done" folder
     string groundTruthFile = getFileNameWithoutExtension(filepath) + "_GT.png";
     imwrite(IMAGES_FOLDER + "/gt/" + groundTruthFile, groundTruth);
     executeMoveFile(getFileNameWithExtension(filepath), "done");
@@ -213,7 +203,6 @@ void chooseFoods(int event, int x, int y, int flags, void *objeto)
 {
     if (event == EVENT_LBUTTONDOWN)
     {
-        //cout << "Posicao do mouse (" << x << ", " << y << ")    " << endl;
         int foodIndex = wshed.getFoodRegionIndex(Point(x, y)) + 1; //soma um pois essa funcao retorna o index - 1
         int foodId;
         cout << "Digite o id do alimento: " << flush;
