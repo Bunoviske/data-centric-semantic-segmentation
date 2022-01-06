@@ -5,7 +5,6 @@ build/
 *.jpeg
 *.jpg
 pibitTrainedModels/
-dataset*/
 !DatasetPreprocessing/
 wandb/
 .ipynb_checkpoints/
