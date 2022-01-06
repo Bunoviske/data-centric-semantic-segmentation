@@ -40,3 +40,8 @@ AT ANY POINT OF THE PROGRAM, PRESS 'ESC' TO GO TO THE NEXT IMAGE
 # Output
 
 Two folders are created inside your images folder: 'done' has all the images already annotated and 'gt' has the ground truth images for semantic segmentation
+
+
+# Important notes
+
+When you load big images, opencv will not fit the image on your computer screen. I still need to resize these images according to your display dimensions.
