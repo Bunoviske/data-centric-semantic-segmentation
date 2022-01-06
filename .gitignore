@@ -1,3 +1,20 @@
+build/
+.vscode
+*zip
+*.png
+*.jpeg
+*.jpg
+pibitTrainedModels/
+dataset*/
+!DatasetPreprocessing/
+wandb/
+.ipynb_checkpoints/
+__pycache__/
+
+
+
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
