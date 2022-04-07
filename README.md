@@ -31,6 +31,15 @@ If your dataset suffers from class imbalance, you need to calculate the weights 
 your Dataloader Sampler.
 
 
+### Install dependencies
+
+In general, the tools were developed in python, so here are some steps in order to configure your environment. I recommend installing Miniconda3 (https://docs.conda.io/en/latest/miniconda.html) and do the following:
+
+```
+conda create -n myenv python=3.8
+conda activate myenv
+pip install -r requirements.txt
+```
 
 ### Any question you can get in contact
 
