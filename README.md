@@ -1,10 +1,10 @@
-# Data Framework for Semantic/Instance Segmentation
+# Data Centric Framework for Semantic/Instance Segmentation
 
 Bunch of different tools which helps visualizing, transforming and annotating images for semantic/instance segmentation tasks. Check each folder to find these different tools.
 
 ## Ground Truth Generation
 
-Labeling tool that creates masks for your semantic segmentation problem. It uses watershed algorithm to boost annotation speed.
+Labeling tool that creates masks for your semantic segmentation problem. It uses watershed algorithm to boost annotation speed (check inside the folder for more details).
 
 ## Ground Truth Generation with Object Detection
 
@@ -18,11 +18,11 @@ Checks class histogram from a semantic segmentation dataset and verify images si
 ## Data Inspection
 
 Go through your whole dataset and choose which images are good or bad. This is a very important tool if you need clean data and wants to 
-build a project with Data-Centric approach.
+build a project with a Data-Centric approach.
 
 ## Dataset Stratification
 
-Multi label dataset stratification can be really hard to execute. I propose a simple approach that keeps the class balance 
+Multi label dataset stratification can be really tricky. I propose a simple approach that keeps the class balance 
 of your trainset and testset.
 
 ## Class weights
