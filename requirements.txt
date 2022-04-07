@@ -8,7 +8,8 @@ matplotlib==3.3.4
 pycocotools
 plotly
 ipyplot
-opencv-python
 ipywidgets
 pytorch-lightning
 sklearn
+opencv-python-headless==4.1.2.30
+opencv-python==4.1.2.30
