@@ -9,7 +9,7 @@ Imagem annotation and ground truth generation for semantic segmentation tasks. W
 
 # Compilation
 
-Install opencv and latest g++ and c++ 
+Install opencv and latest g++ and c++ (recommended to run in linux or wsl with X-server)
 
 - mkdir build  
 - cd build  
