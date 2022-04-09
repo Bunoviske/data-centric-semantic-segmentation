@@ -12,6 +12,9 @@ conda activate myenv
 pip install -r requirements.txt
 ```
 
+## Tools list
+
+
 ### Ground Truth Generation
 
 Labeling tool that creates masks for your semantic segmentation problem. It uses watershed algorithm to boost annotation speed (check inside the folder for more details).
