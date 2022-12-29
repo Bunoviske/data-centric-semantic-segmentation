@@ -2,7 +2,7 @@
 torch==1.10.1+cpu
 fastai==2.5.3
 torchvision==0.11.2+cpu
-numpy
+numpy==1.20.3
 pandas
 matplotlib==3.3.4
 pycocotools
