@@ -1,8 +1,5 @@
---find-links https://download.pytorch.org/whl/torch_stable.html
-torch==1.10.1+cpu
 fastai==2.5.3
-torchvision==0.11.2+cpu
-numpy
+numpy==1.21.6
 pandas
 matplotlib==3.3.4
 pycocotools
@@ -11,5 +8,4 @@ ipyplot
 ipywidgets
 pytorch-lightning
 sklearn
-opencv-python-headless==4.1.2.30
-opencv-python==4.1.2.30
+opencv-python
