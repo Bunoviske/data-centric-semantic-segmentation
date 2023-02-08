@@ -33,6 +33,8 @@ Checks class histogram from a semantic segmentation dataset and verify images si
 Go through your whole dataset and choose which images are good or bad. This is a very important tool if you need clean data and wants to 
 build a project with a Data-Centric approach.
 
+Sometimes it won't work in VSCODE, so start Jupyterlab to run the notebooks from this folder: `jupyter lab --no-browser`
+
 ### Dataset Stratification
 
 Multi label dataset stratification can be really tricky. I propose a simple approach that keeps the class balance 
